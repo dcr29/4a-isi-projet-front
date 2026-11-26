@@ -1,21 +1,32 @@
 async function loadProducts()
 {
-    const response = await fetch("http://localhost:8000/products");
-    const products = await response.json();
+    const responseCategories = await fetch("http://localhost:8000/categories");
+    const categories = await responseCategories.json();
+
+    const responseProducts = await fetch("http://localhost:8000/products");
+    const products = await responseProducts.json();
 
     const container = document.getElementById("products");
 
-    for(const product of products)
+    for(const category of categories)
     {
-        const card = document.createElement("div");
-        
-        card.innerHTML = 
-        `<h3>${product.name}</h3>
-        <p>${product.description}</p>
-        <p>${product.price} €</p>
-        `;
+        const title = document.createElement("h3");
+        title.textContent = category.name;
+        container.appendChild(title);
 
-        container.appendChild(card);
+        for(const product of products)
+        {
+            if(product.category_id == category.id)
+            {
+                const card = document.createElement("div");
+                card.innerHTML =
+                `<h4>${product.name}</h4>
+                <p>${product.description}</p>
+                <p>${product.price} €</p>
+                `;
+                container.appendChild(card);
+            }
+        }
     }
 }
 
