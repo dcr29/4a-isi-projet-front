@@ -24,6 +24,12 @@ async function loadProducts()
                 <p>${product.description}</p>
                 <p>${product.price} €</p>
                 `;
+
+                if(!product.is_available || product.stock === 0)
+                {
+                    card.classList.add("unavailable");
+                }
+
                 container.appendChild(card);
             }
         }
@@ -46,6 +52,11 @@ async function loadMenus()
         <p>${menu.description}</p>
         <p>${menu.price} €</p>
         `;
+
+        if(!menu.is_available || menu.available_stock === 0)
+        {
+            card.classList.add("unavailable");
+        }
 
         container.appendChild(card);
     }
