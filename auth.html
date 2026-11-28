@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pol-eat-heck - Connexion</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Connexion</h1>
+
+    <form id="login-form">
+        <label for="login-username">Nom d'utilisateur</label>
+        <input type="text" id="login-username" required>
+
+        <label for="login-password">Mot de passe</label>
+        <input type="password" id="login-password" required>
+
+        <button type="submit">Se connecter</button>
+  </form>
+
+  <p id="login-message"></p>
+
+  <h1>Créer un compte</h1>
+
+  <form id="register-form">
+        <label for="register-username">Nom d'utilisateur</label>
+        <input type="text" id="register-username" required>
+        
+        <button type="submit">Créer mon compte</button>
+  </form>
+
+  <p id="register-message"></p>
+
+  <a id="continue-link" href="index.html" hidden>J'ai noté mon mot de passe, continuer vers le catalogue</a>
+
+  <script src="js/auth.js"></script>
+
+</body>
+</html>
