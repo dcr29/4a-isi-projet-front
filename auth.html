@@ -9,6 +9,13 @@
 </head>
 
 <body>
+    
+    <nav>
+        <a href="index.html">Catalogue</a>
+        <a href="auth.html" class="visitor">Connexion / Inscription</a>
+        <button type="button" id="logout-button" class="connected">Déconnexion</button>
+    </nav>
+
     <h1>Connexion</h1>
 
     <form id="login-form">
@@ -28,7 +35,7 @@
   <form id="register-form">
         <label for="register-username">Nom d'utilisateur</label>
         <input type="text" id="register-username" required>
-        
+
         <button type="submit">Créer mon compte</button>
   </form>
 
@@ -36,6 +43,7 @@
 
   <a id="continue-link" href="index.html" hidden>J'ai noté mon mot de passe, continuer vers le catalogue</a>
 
+  <script src="js/nav.js"></script>
   <script src="js/auth.js"></script>
 
 </body>
